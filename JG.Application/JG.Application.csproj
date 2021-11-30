@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="QuestionApplication.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\JG_Domain\JG_Domain.csproj" />
+  </ItemGroup>
+
+</Project>
