@@ -1,12 +1,12 @@
 using Microsoft.AspNetCore.Mvc;
 using JG_Domain.Entities;
-using Microsoft.Extensions.Logging;
 using JG_Application.Interface;
-using System.Threading.Tasks;
 using JG_Domain.Entities.NotMapped;
+using Microsoft.AspNetCore.Cors;
 
 namespace JG_API.Controllers
 {
+    [EnableCors("AllowSpecific")]
     [ApiController]
     [Route("[controller]")]
     public class QuizController : ControllerBase

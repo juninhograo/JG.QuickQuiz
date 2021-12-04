@@ -2,12 +2,16 @@ using JG_Application;
 using JG_Application.Interface;
 using JG_Domain.Interface;
 using JG_Infra.Config;
-using JG_Infra.Repository;
 using JG_Infra.Service;
 using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateBuilder(args);
 var services = builder.Services;
+
+builder.Services.AddCors(options =>
+         options.AddPolicy("AllowSpecific", p => p.WithOrigins("http://localhost:5009")
+                                                   .WithMethods("GET")
+                                                   .WithHeaders("name")));
 
 // Add services to the container.
 builder.Services.AddControllers();
@@ -36,6 +40,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCors();
 
 app.UseAuthorization();
 
